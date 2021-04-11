@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "550283079118",
+    "project_id": "grosmetique",
+    "storage_bucket": "grosmetique.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550283079118:android:0a227c23e8113c22d74f9f",
+        "android_client_info": {
+          "package_name": "com.example.grosmetique"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "550283079118-b9e23lmc453aq3skhdre3phlafa9f28v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1TsCuqsfd1--ox4qyKQ8TL0zuRvsteGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "550283079118-b9e23lmc453aq3skhdre3phlafa9f28v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
