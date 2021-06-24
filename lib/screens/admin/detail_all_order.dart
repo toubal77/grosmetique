@@ -56,13 +56,12 @@ class DetailAllOrder extends StatelessWidget {
             height: 10.0,
           ),
           Container(
-            child: Text('commende le: ' +
-                // DateFormat('dd/MM/yyyy hh:mm')
-                //     .format(order['dateTime'])
-                //     .toString(),
-                timeago
-                    .format(DateTime.tryParse(order['dateTime'].toString()))
-                    .toString()),
+            child: Text(
+              'commende le: ' +
+                  timeago
+                      .format(DateTime.tryParse(order['dateTime'].toString()))
+                      .toString(),
+            ),
           ),
           SizedBox(
             height: 10.0,

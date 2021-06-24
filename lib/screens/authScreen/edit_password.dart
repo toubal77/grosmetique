@@ -128,7 +128,7 @@ class _EditPasswordState extends State<EditPassword> {
                       decoration:
                           InputDecoration(labelText: 'Confirm Password'),
                       obscureText: true,
-                      controller: _passwordController,
+                      // controller: _passwordController,
                       textInputAction: TextInputAction.done,
                       validator: (value) {
                         if (value != _passwordController.text) {
@@ -160,22 +160,6 @@ class _EditPasswordState extends State<EditPassword> {
                               ),
                             ),
                           ),
-                    /*RaisedButton(
-                      onPressed: _submitForm,
-                      child: Text(
-                        'Update',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30.0, vertical: 8.0),
-                      color: Theme.of(context).primaryColor,
-                    ),*/
                   ],
                 ),
               ),

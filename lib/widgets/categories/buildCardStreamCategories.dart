@@ -6,58 +6,56 @@ class BuildCardStreamCategories extends StatelessWidget {
   final QueryDocumentSnapshot docs;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Card(
-        margin: EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 4,
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              CircleAvatar(
-                backgroundImage: NetworkImage(
-                  docs['imageUrl'],
+    return Card(
+      margin: EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 4,
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            CircleAvatar(
+              backgroundImage: NetworkImage(
+                docs['imageUrl'],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 10.0, right: 10.0),
+              child: Text(
+                docs['title'],
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              Container(
-                padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                child: Text(
-                  docs['title'],
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
+            ),
+            Container(
+              child: Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(
+                      Icons.edit,
+                      color: Colors.purple,
+                    ),
+                    onPressed: () =>
+                        _startEditCategories(context, docs['title']),
                   ),
-                ),
+                  SizedBox(
+                    width: 3.0,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.delete,
+                      color: Colors.purple,
+                    ),
+                    onPressed: () => _deleteCategories(docs['title']),
+                  ),
+                ],
               ),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(
-                        Icons.edit,
-                        color: Colors.purple,
-                      ),
-                      onPressed: () =>
-                          _startEditCategories(context, docs['title']),
-                    ),
-                    SizedBox(
-                      width: 3.0,
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.delete,
-                        color: Colors.purple,
-                      ),
-                      onPressed: () => _deleteCategories(docs['title']),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

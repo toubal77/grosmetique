@@ -84,49 +84,6 @@ class _AllOrdersState extends State<AllOrders> {
                         ),
                       ),
                     );
-              // return Consumer<Orders>(
-              //   builder: (ctx, orderData, child) => orderData.orders.length == 0
-              //       ? Center(
-              //           child: Text(
-              //               'You don\'t have orders in database to examined'),
-              //         )
-              //       : ListView.builder(
-              //           itemCount: orderData.orders.length,
-              //           itemBuilder: (ctx, index) => GestureDetector(
-              //             onTap: () {
-              //               Navigator.of(context).push(
-              //                 MaterialPageRoute(
-              //                   builder: (ctx) => DetailAllOrder(
-              //                     orderData.orders[index],
-              //                   ),
-              //                 ),
-              //               );
-              //             },
-              //             child: GestureDetector(
-              //               child: Card(
-              //                 margin: const EdgeInsets.all(10),
-              //                 child: Container(
-              //                   child: ListTile(
-              //                     title: Text(
-              //                       '\DA${orderData.orders[index].amount.toStringAsFixed(2)}',
-              //                     ),
-              //                     subtitle: Text(
-              //                       DateFormat('dd/MM/yyyy hh:mm').format(
-              //                           orderData.orders[index].dateTime),
-              //                     ),
-              //                     trailing: Icon(
-              //                       Icons.verified,
-              //                       color: orderData.orders[index].confirmed
-              //                           ? Colors.green
-              //                           : Colors.red,
-              //                     ),
-              //                   ),
-              //                 ),
-              //               ),
-              //             ),
-              //           ),
-              //         ),
-              // );
             }
           }
         },

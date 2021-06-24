@@ -367,7 +367,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                                   icon: Icon(
                                     Icons.arrow_downward,
                                   ),
-                                  iconSize: 24,
+                                  iconSize: 20,
                                   elevation: 16,
                                   style: TextStyle(
                                     color: Colors.purple,
@@ -380,7 +380,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                                     '${categoriesController.text}',
                                     style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 16.0,
+                                      fontSize: 14.0,
                                     ),
                                   ),
                                   onChanged: (String newValue) {
@@ -457,7 +457,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                                   icon: Icon(
                                     Icons.arrow_downward,
                                   ),
-                                  iconSize: 24,
+                                  iconSize: 20,
                                   elevation: 16,
                                   style: TextStyle(
                                     color: Colors.purple,
@@ -470,7 +470,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                                     '${marquesController.text}',
                                     style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 16.0,
+                                      fontSize: 14.0,
                                     ),
                                   ),
                                   onChanged: (String newValue) {
@@ -572,83 +572,3 @@ class _EditProductScreenState extends State<EditProductScreen> {
     );
   }
 }
-/*
-// ignore: must_be_immutable
-class BuildDropDownCategories extends StatefulWidget {
-  String catProd;
-  String dbCat;
-  BuildDropDownCategories(
-    this.catProd,
-    this.dbCat,
-  );
-  @override
-  _BuildDropDownCategoriesState createState() =>
-      _BuildDropDownCategoriesState();
-}
-
-class _BuildDropDownCategoriesState extends State<BuildDropDownCategories> {
-  List<DropdownMenuItem<String>> _ddropdownValue = [];
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection(widget.dbCat).snapshots(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          var docs = snapshot.data.docs;
-          for (int i = 0; i < docs.length; i++) {
-            _ddropdownValue.add(
-              DropdownMenuItem<String>(
-                value: docs[i]['title'],
-                child: Text(
-                  docs[i]['title'],
-                  style: TextStyle(
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-            );
-          }
-          return DropdownButton<String>(
-            value: widget.catProd.isNotEmpty ? null : widget.catProd,
-            icon: Icon(
-              Icons.arrow_downward,
-            ),
-            iconSize: 24,
-            elevation: 16,
-            style: TextStyle(
-              color: Colors.purple,
-            ),
-            underline: Container(
-              height: 2,
-              color: Colors.purple,
-            ),
-            hint: Text(
-              '${widget.catProd}',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16.0,
-              ),
-            ),
-            onChanged: (String newValue) {
-              final snackbar = SnackBar(
-                content: Text(
-                  'Selected currency value is  "$newValue"',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              );
-              Scaffold.of(context).showSnackBar(snackbar);
-              setState(() {
-                widget.catProd = newValue;
-              });
-            },
-            items: _ddropdownValue,
-          );
-        }
-        return CircularProgressIndicator();
-      },
-    );
-  }
-}*/

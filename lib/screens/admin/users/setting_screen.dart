@@ -54,7 +54,7 @@ class _SettingState extends State<SettingScreen> {
     _emailController.text = _userData['email'];
     _addressController.text = _userData['address'];
     _valuesForm['status_admin'] = _userData['status_admin'];
-
+    _valuesForm['e-mail'] = _emailController.text;
     setState(() {
       _isLoading = false;
     });
@@ -218,26 +218,57 @@ class _SettingState extends State<SettingScreen> {
                         _valuesForm['username'] = value;
                       },
                     ),
-                    TextFormField(
-                      //  initialValue: _valuesForm['e-mail'],
-                      decoration: InputDecoration(labelText: 'E-mail'),
-                      keyboardType: TextInputType.emailAddress,
-                      textInputAction: TextInputAction.next,
-                      focusNode: _emailFocusNode,
-                      controller: _emailController,
-                      onFieldSubmitted: (_) {
-                        FocusScope.of(context).requestFocus(_phoneFocusNode);
-                      },
-                      validator: (value) {
-                        if (value.isEmpty || !value.contains('@'))
-                          return 'Please enter a valid email address.';
+                    FocusScope(
+                      node: new FocusScopeNode(),
+                      child: TextFormField(
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                        decoration: InputDecoration(
+                          labelText: 'E-mail',
+                          labelStyle: TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
+                        controller: _emailController,
+                        keyboardType: TextInputType.emailAddress,
+                        focusNode: _emailFocusNode,
+                        enabled: false,
+                        onFieldSubmitted: (_) {
+                          FocusScope.of(context).requestFocus(_phoneFocusNode);
+                        },
+                        validator: (value) {
+                          if (value.isEmpty || !value.contains('@'))
+                            return 'Please enter a valid email address.';
 
-                        return null;
-                      },
-                      onSaved: (value) {
-                        _valuesForm['e-mail'] = value;
-                      },
+                          return null;
+                        },
+                        onSaved: (value) {
+                          _valuesForm['e-mail'] = value;
+                        },
+                      ),
                     ),
+
+                    // TextFormField(
+                    //   //  initialValue: _valuesForm['e-mail'],
+                    //   decoration: InputDecoration(labelText: 'E-mail'),
+                    //   keyboardType: TextInputType.emailAddress,
+                    //   textInputAction: TextInputAction.next,
+                    //   focusNode: _emailFocusNode,
+                    //   controller: _emailController,
+                    //   onFieldSubmitted: (_) {
+                    //     FocusScope.of(context).requestFocus(_phoneFocusNode);
+                    //   },
+                    //   validator: (value) {
+                    //     if (value.isEmpty || !value.contains('@'))
+                    //       return 'Please enter a valid email address.';
+
+                    //     return null;
+                    //   },
+                    //   onSaved: (value) {
+                    //     _valuesForm['e-mail'] = value;
+                    //   },
+                    // ),
                     TextFormField(
                       //   initialValue: _valuesForm['phone'],
                       decoration: InputDecoration(labelText: 'Phome'),

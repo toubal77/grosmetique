@@ -30,7 +30,11 @@ class BuildStreamMarque extends StatelessWidget {
                 );
               }
             }
-
+            if (snapshot.data == null) {
+              return Center(
+                child: Text('You don\'t have Categories yet!'),
+              );
+            }
             if (snapshot.error || snapshot.hasError) {
               return Center(
                 child: Text(

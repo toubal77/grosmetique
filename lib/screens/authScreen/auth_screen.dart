@@ -108,7 +108,6 @@ class _AuthScreenState extends State<AuthScreen> {
         },
       );
       print(err);
-      // throw err;
     }
   }
 
@@ -307,7 +306,7 @@ class _AuthScreenState extends State<AuthScreen> {
     final height = MediaQuery.of(context).size.height;
     return Material(
       child: Stack(
-        children: [
+        children: <Widget>[
           Scaffold(
             body: Container(
               height: height,
